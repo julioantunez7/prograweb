@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" 
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	
+	<persistence-unit name="trabajoPU" transaction-type="JTA">
+		<jta-data-source>java:/TrabajoDS</jta-data-source>
+		<class>pe.edu.upc.trabajo.models.entities.Boleta</class>
+		<class>pe.edu.upc.trabajo.models.entities.Cita</class>
+		<class>pe.edu.upc.trabajo.models.entities.Cliente</class>
+		<class>pe.edu.upc.trabajo.models.entities.Compra</class>
+		<class>pe.edu.upc.trabajo.models.entities.Consulta</class>
+		<class>pe.edu.upc.trabajo.models.entities.ListaProducto</class>
+		<class>pe.edu.upc.trabajo.models.entities.Mascota</class>
+		<class>pe.edu.upc.trabajo.models.entities.Pago</class>
+		<class>pe.edu.upc.trabajo.models.entities.Producto</class>
+		<class>pe.edu.upc.trabajo.models.entities.Veterinaria</class>
+		<class>pe.edu.upc.trabajo.models.entities.Veterinario</class>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.schema-generation.database.action" 
+					value="update"/>
+		</properties>
+	</persistence-unit>
+</persistence>
