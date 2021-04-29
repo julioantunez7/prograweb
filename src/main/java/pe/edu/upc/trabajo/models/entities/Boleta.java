@@ -11,10 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-//hola :v
-56546
-
-
 @Entity
 @Table(name = "Boletas")
 public class Boleta {
