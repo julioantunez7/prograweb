@@ -14,6 +14,7 @@ import javax.persistence.Table;
 //hola :v
 //hola 2
 
+
 @Entity
 @Table(name = "Boletas")
 public class Boleta {
