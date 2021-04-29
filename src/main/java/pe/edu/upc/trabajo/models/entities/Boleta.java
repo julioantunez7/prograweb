@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 //hola :v
+//hola 2
 
 @Entity
 @Table(name = "Boletas")
