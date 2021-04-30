@@ -16,16 +16,47 @@ import javax.persistence.Table;
 public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "producto_id")
-	private Integer id;
-	@Column(name = "producto_nombre", length = 10)
-	private String nombre;
-	@Column(name = "producto_descripcion", length = 20)
-	private String apellido;
+	@Column(name = "idProduto")
+	private Integer idProduto;
+	@Column(name = "nombreProducto", length = 10)
+	private String nombreProducto;
+	@Column(name = "apellidoProducto", length = 20)
+	private String apellidoProducto;
+	public Producto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Producto(Integer idProduto, String nombreProducto, String apellidoProducto) {
+		super();
+		this.idProduto = idProduto;
+		this.nombreProducto = nombreProducto;
+		this.apellidoProducto = apellidoProducto;
+	}
+	public Integer getIdProduto() {
+		return idProduto;
+	}
+	public void setIdProduto(Integer idProduto) {
+		this.idProduto = idProduto;
+	}
+	public String getNombreProducto() {
+		return nombreProducto;
+	}
+	public void setNombreProducto(String nombreProducto) {
+		this.nombreProducto = nombreProducto;
+	}
+	public String getApellidoProducto() {
+		return apellidoProducto;
+	}
+	public void setApellidoProducto(String apellidoProducto) {
+		this.apellidoProducto = apellidoProducto;
+	}
 	
-	@OneToMany(mappedBy = "producto", fetch = FetchType.LAZY)
-	private List<ListaProducto> listaProductos;
 	
-	@OneToMany(mappedBy = "producto", fetch = FetchType.LAZY)
-	private List<Compra> compras;
+	
+	//@OneToMany(mappedBy = "producto", fetch = FetchType.LAZY)
+	//private List<ListaProducto> listaProductos;
+	
+	//@OneToMany(mappedBy = "producto", fetch = FetchType.LAZY)
+	//private List<Compra> compras;
+	
 }
