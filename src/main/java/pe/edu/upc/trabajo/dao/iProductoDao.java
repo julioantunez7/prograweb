@@ -1,5 +1,3 @@
-dao
-
 package pe.edu.upc.trabajo.dao;
 
 import java.util.List;
