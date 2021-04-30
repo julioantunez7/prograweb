@@ -17,19 +17,51 @@ public class Veterinaria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "veterinaria_id")
-	private Integer id;
+	private Integer idVeterinaria;
 	@Column(name = "veterinaria_nombre", length = 15)
-	private String nombre;
+	private String nombreVeterinaria;
 	@Column(name = "veterinaria_direccion", length = 10)
-	private String direccion;
+	private String direccionVeterinaria;
 	@Column(name = "veterinaria_numero", columnDefinition = "NUMERIC(9)")
-	private Integer numero;
+	private Integer numeroVeterinaria;
 	@Column(name = "veterinaria_descripcion", length = 30)
-	private String descripcion;
+	private String descripcionVeterinaria;
 	
-	@OneToMany(mappedBy = "veterinaria", fetch = FetchType.LAZY)
-	private List<Veterinario> veterinarios;
+	public Integer getIdVeterinaria() {
+		return idVeterinaria;
+	}
+	public void setIdVeterinaria(Integer idVeterinaria) {
+		this.idVeterinaria = idVeterinaria;
+	}
+	public String getNombreVeterinaria() {
+		return nombreVeterinaria;
+	}
+	public void setNombreVeterinaria(String nombreVeterinaria) {
+		this.nombreVeterinaria = nombreVeterinaria;
+	}
+	public String getDireccionVeterinaria() {
+		return direccionVeterinaria;
+	}
+	public void setDireccionVeterinaria(String direccionVeterinaria) {
+		this.direccionVeterinaria = direccionVeterinaria;
+	}
+	public Integer getNumeroVeterinaria() {
+		return numeroVeterinaria;
+	}
+	public void setNumeroVeterinaria(Integer numeroVeterinaria) {
+		this.numeroVeterinaria = numeroVeterinaria;
+	}
+	public String getDescripcionVeterinaria() {
+		return descripcionVeterinaria;
+	}
+	public void setDescripcionVeterinaria(String descripcionVeterinaria) {
+		this.descripcionVeterinaria = descripcionVeterinaria;
+	}
 	
-	@OneToMany(mappedBy = "veterinaria", fetch = FetchType.LAZY)
-	private List<ListaProducto> listaproductos;
+	
+	//@OneToMany(mappedBy = "veterinaria", fetch = FetchType.LAZY)
+	//private List<Veterinario> veterinarios;
+	
+	//@OneToMany(mappedBy = "veterinaria", fetch = FetchType.LAZY)
+	//private List<ListaProducto> listaproductos;
 }
