@@ -67,7 +67,7 @@ public class ProductoController {
 	public void delet(Producto re)
 	{
 	try {
-		pService.delete(re.getIdProduto());
+		pService.delete(re.getIdProducto());
 		this.list();
 	} catch (Exception e) {
 		System.out.println("Error al eliminar en el controller del producto");

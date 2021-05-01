@@ -21,7 +21,7 @@
 				styleClass="control-label" />
 			<p:inputText autocomplete="off" id="idVeterinaria"
 				styleClass="form-control"
-				value="#{veterinariaController.veterinaria.idVeterinaria}" required="true" />
+				value="#{veterinariaController.veterinaria.idVeterinaria}" />
 
 
 			<h:outputLabel for="nameVeterinaria" value="Nombre "
@@ -61,6 +61,8 @@
 				actionListener="#{veterinariaController.Insert()}"
 				styleClass="btn btn-primary " update="@form"
 				action="listVeterinaria?faces-redirect=true" />
+				
+				
 			<p:commandButton value="Cancelar"
 				action="listVeterinaria?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />

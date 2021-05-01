@@ -35,7 +35,7 @@ public class VeterinariaController {
 
 	public String newVeterinaria() {
 		this.setVeterinaria(new Veterinaria());
-		return "veterinaria.xhtml";
+		return "Veterinaria.xhtml";
 	}
 
 	public void Insert() {

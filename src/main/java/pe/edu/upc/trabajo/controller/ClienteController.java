@@ -21,7 +21,8 @@ public class ClienteController {
 	//variables
 	
 	private Cliente cliente;
-	List<Cliente> listaClientes;
+	private List<Cliente> listaClientes;
+
 	
 	//constructores
 	

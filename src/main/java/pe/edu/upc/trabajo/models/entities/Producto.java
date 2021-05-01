@@ -16,8 +16,8 @@ import javax.persistence.Table;
 public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idProduto")
-	private Integer idProduto;
+	@Column(name = "idProducto")
+	private Integer idProducto;
 	@Column(name = "nombreProducto", length = 15)
 	private String nombreProducto;
 	@Column(name = "descripcionProducto", length = 100)
@@ -26,17 +26,18 @@ public class Producto {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Producto(Integer idProduto, String nombreProducto, String descripcionProducto) {
+	
+	public Producto(Integer idProducto, String nombreProducto, String descripcionProducto) {
 		super();
-		this.idProduto = idProduto;
+		this.idProducto = idProducto;
 		this.nombreProducto = nombreProducto;
 		this.descripcionProducto = descripcionProducto;
 	}
-	public Integer getIdProduto() {
-		return idProduto;
+	public Integer getIdProducto() {
+		return idProducto;
 	}
-	public void setIdProduto(Integer idProduto) {
-		this.idProduto = idProduto;
+	public void setIdProducto(Integer idProduto) {
+		this.idProducto = idProduto;
 	}
 	public String getNombreProducto() {
 		return nombreProducto;
