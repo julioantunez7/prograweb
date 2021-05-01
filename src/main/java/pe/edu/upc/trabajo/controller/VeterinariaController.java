@@ -58,6 +58,7 @@ public class VeterinariaController {
 	public void delete(Veterinaria vet) {
 		try {
 			vService.delete(vet.getIdVeterinaria());
+			this.list();
 		} catch (Exception e) {
 			System.out.println("Error al eliminar en el controller de veterinaria");
 		}

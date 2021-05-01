@@ -60,6 +60,7 @@ public class ClienteController {
 	public void delete(Cliente cl) {
 		try {
 			cService.delete(cl.getIdCliente());
+			this.list();
 		} catch (Exception e) {
 			System.out.println("Error al eliminar en el controller de cliente");
 		}
