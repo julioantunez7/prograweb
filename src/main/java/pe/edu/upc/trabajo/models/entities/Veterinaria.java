@@ -20,11 +20,11 @@ public class Veterinaria {
 	private Integer idVeterinaria;
 	@Column(name = "veterinaria_nombre", length = 15)
 	private String nombreVeterinaria;
-	@Column(name = "veterinaria_direccion", length = 10)
+	@Column(name = "veterinaria_direccion", length = 50)
 	private String direccionVeterinaria;
 	@Column(name = "veterinaria_numero", columnDefinition = "NUMERIC(9)")
 	private Integer numeroVeterinaria;
-	@Column(name = "veterinaria_descripcion", length = 30)
+	@Column(name = "veterinaria_descripcion", length = 100)
 	private String descripcionVeterinaria;
 	
 	public Integer getIdVeterinaria() {

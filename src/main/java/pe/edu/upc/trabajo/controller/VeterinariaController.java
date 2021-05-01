@@ -33,7 +33,7 @@ public class VeterinariaController {
 
 	// métodos especializados
 
-	public String newCliente() {
+	public String newVeterinaria() {
 		this.setVeterinaria(new Veterinaria());
 		return "veterinaria.xhtml";
 	}

@@ -18,19 +18,19 @@ public class Producto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idProduto")
 	private Integer idProduto;
-	@Column(name = "nombreProducto", length = 10)
+	@Column(name = "nombreProducto", length = 15)
 	private String nombreProducto;
-	@Column(name = "apellidoProducto", length = 20)
-	private String apellidoProducto;
+	@Column(name = "descripcionProducto", length = 100)
+	private String descripcionProducto;
 	public Producto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Producto(Integer idProduto, String nombreProducto, String apellidoProducto) {
+	public Producto(Integer idProduto, String nombreProducto, String descripcionProducto) {
 		super();
 		this.idProduto = idProduto;
 		this.nombreProducto = nombreProducto;
-		this.apellidoProducto = apellidoProducto;
+		this.descripcionProducto = descripcionProducto;
 	}
 	public Integer getIdProduto() {
 		return idProduto;
@@ -44,11 +44,11 @@ public class Producto {
 	public void setNombreProducto(String nombreProducto) {
 		this.nombreProducto = nombreProducto;
 	}
-	public String getApellidoProducto() {
-		return apellidoProducto;
+	public String getdescripcionProducto() {
+		return descripcionProducto;
 	}
-	public void setApellidoProducto(String apellidoProducto) {
-		this.apellidoProducto = apellidoProducto;
+	public void setdescripcionProducto(String descripcionProducto) {
+		this.descripcionProducto = descripcionProducto;
 	}
 	
 	

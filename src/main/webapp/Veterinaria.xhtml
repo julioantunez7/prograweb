@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Veterinarias:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Registro de Veterinaria</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<br />
+			<h:outputLabel for="idVeterinaria" value="Código " 
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idVeterinaria"
+				styleClass="form-control"
+				value="#{veterinariaController.veterinaria.idVeterinaria}" required="true" />
+
+
+			<h:outputLabel for="nameVeterinaria" value="Nombre "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nameVeterinaria"
+				styleClass="form-control"
+				value="#{veterinariaController.veterinaria.nombreVeterinaria}"
+				maxlength="15" required="true" />
+
+
+			<h:outputLabel for="adressVeterinaria" value="Dirección "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="adressVeterinaria"
+				styleClass="form-control"
+				value="#{veterinariaController.veterinaria.direccionVeterinaria}"
+				maxlength="50" required="true" />
+				
+				
+			<h:outputLabel for="numberVeterinaria" value="Número de Celular "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="numberVeterinaria"
+				styleClass="form-control"
+				value="#{veterinariaController.veterinaria.numeroVeterinaria}"
+				maxlength="9" required="true" />
+				
+			
+			<h:outputLabel for="descriptionVeterinaria" value="Descripción "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="descriptionVeterinaria"
+				styleClass="form-control"
+				value="#{veterinariaController.veterinaria.descripcionVeterinaria}"
+				maxlength="100" required="true" />
+			<br />
+
+			<br />
+			<p:commandButton value="Grabar"
+				actionListener="#{veterinariaController.Insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listVeterinaria?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listVeterinaria?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

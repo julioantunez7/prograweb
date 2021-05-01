@@ -18,13 +18,13 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cliente_id")
 	private Integer idCliente;
-	@Column(name = "cliente_nombre", length = 10)
+	@Column(name = "cliente_nombre", length = 15)
 	private String nombre;
-	@Column(name = "cliente_apellido", length = 10)
+	@Column(name = "cliente_apellido", length = 15)
 	private String apellido;
-	@Column(name = "cliente_correo", length = 20)
+	@Column(name = "cliente_correo", length = 30)
 	private String correo;
-	@Column(name = "cliente_direccion", length = 10)
+	@Column(name = "cliente_direccion", length = 50)
 	private String direccion;
 	@Column(name = "cliente_numero", columnDefinition = "NUMERIC(9)")
 	private Integer numero;
