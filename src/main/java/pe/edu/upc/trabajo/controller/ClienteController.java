@@ -66,6 +66,25 @@ public class ClienteController {
 		}
 	}
 	
+	public void findByName() {
+		try {
+			if(cliente.getNombre().isEmpty()) {
+				this.list();
+			
+		    }else {
+		    	listaClientes=this.cService.findByName(this.getCliente());
+		    }
+			
+		}	
+			catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void clean() {
+		this.init();
+	}
+	
 	// get y set
 	public Cliente getCliente() {
 		return cliente;

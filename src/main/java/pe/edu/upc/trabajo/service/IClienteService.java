@@ -11,5 +11,7 @@ public interface IClienteService {
 	List<Cliente>list();
 	
 	public void delete(int idCliente);
+	
+	public List<Cliente> findByName(Cliente cli);
 }
 
