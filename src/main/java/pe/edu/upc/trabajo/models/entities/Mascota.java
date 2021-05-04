@@ -19,7 +19,7 @@ public class Mascota {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "mascota_id")
-	private Integer id;
+	private Integer idMascota;
 	@Column(name = "mascota_nombre", length = 10)
 	private String nombre;
 	@Column(name = "mascota_edad", columnDefinition = "NUMERIC(2)")
@@ -28,7 +28,7 @@ public class Mascota {
 	private String raza;
 	
 	@ManyToOne
-	@JoinColumn(name= "cliente_id")
+	@JoinColumn(name= "cliente_id", nullable=false)
 	private Cliente cliente;
 
 	public Mascota() {
@@ -36,21 +36,21 @@ public class Mascota {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Mascota(Integer id, String nombre, Integer edad, String raza, Cliente cliente) {
+	public Mascota(Integer idMascota, String nombre, Integer edad, String raza, Cliente cliente) {
 		super();
-		this.id = id;
+		this.idMascota = idMascota;
 		this.nombre = nombre;
 		this.edad = edad;
 		this.raza = raza;
 		this.cliente = cliente;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getIdMascota() {
+		return idMascota;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdMascota(Integer idMascota) {
+		this.idMascota = idMascota;
 	}
 
 	public String getNombre() {
@@ -84,7 +84,7 @@ public class Mascota {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
+
 	
 	
 	//@OneToMany(mappedBy = "mascota", fetch = FetchType.LAZY)
