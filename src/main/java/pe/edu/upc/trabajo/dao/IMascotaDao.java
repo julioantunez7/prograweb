@@ -11,4 +11,6 @@ public interface IMascotaDao {
 	public List<Mascota> list();
 	
 	public void delete(int idMascota);
+	
+	public List<Mascota> findByName(Mascota masc);
 }

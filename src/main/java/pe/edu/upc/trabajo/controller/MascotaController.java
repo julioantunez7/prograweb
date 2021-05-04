@@ -79,6 +79,25 @@ public class MascotaController {
 		}
 	}
 
+	public void findByName() {
+		try {
+			if(mascota.getNombre().isEmpty()) {
+				this.listMascota();
+			
+		    }else {
+		    	listaMascotas=this.mService.findByName(this.getMascota());
+		    }
+			
+		}	
+			catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void clean() {
+		this.init();
+	}
+	
 	//get y set
 	
 

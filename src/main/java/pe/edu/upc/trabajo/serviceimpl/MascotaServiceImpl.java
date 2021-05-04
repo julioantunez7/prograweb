@@ -34,5 +34,11 @@ public class MascotaServiceImpl implements IMascotaService{
 		// TODO Auto-generated method stub
 		mDao.delete(idMascota);
 	}
+
+	@Override
+	public List<Mascota> findByName(Mascota masc) {
+		// TODO Auto-generated method stub
+		return mDao.findByName(masc);
+	}
 	
 }

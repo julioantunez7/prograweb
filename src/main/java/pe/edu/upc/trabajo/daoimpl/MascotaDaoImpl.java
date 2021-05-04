@@ -56,4 +56,19 @@ public class MascotaDaoImpl implements IMascotaDao{
 		
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Mascota> findByName(Mascota masc) {
+		List<Mascota> lista=new ArrayList<Mascota>();
+		try {
+			Query q=em.createQuery("from Mascota m where m.nombre like ?1");
+			q.setParameter(1,"%"+masc.getNombre()+"%");
+			lista=(List<Mascota>)q.getResultList();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return lista;
+	}
+
 }
