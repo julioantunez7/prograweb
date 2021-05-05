@@ -33,7 +33,6 @@ public class VeterinariaServiceImpl implements IVeterinariaService{
 
 	@Override
 	public List<Veterinaria> findByName(Veterinaria vet) {
-		// TODO Auto-generated method stub
 		return vDao.findByName(vet);
 	}
 }

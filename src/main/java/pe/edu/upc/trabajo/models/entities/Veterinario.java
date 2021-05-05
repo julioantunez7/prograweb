@@ -25,6 +25,56 @@ public class Veterinario {
 	@Column(name = "veterinario_numero", columnDefinition = "NUMERIC(9)")
 	private Integer numero;
 	
+	
+	
+	public Integer getId() {
+		return id;
+	}
+
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public Integer getNumero() {
+		return numero;
+	}
+
+
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
+
+
+
+	public Veterinaria getVeterinaria() {
+		return veterinaria;
+	}
+
+
+
+	public void setVeterinaria(Veterinaria veterinaria) {
+		this.veterinaria = veterinaria;
+	}
+
+
+
 	@ManyToOne
 	@JoinColumn(name= "veterinaria_id")
 	private Veterinaria veterinaria;

@@ -21,7 +21,7 @@ public class VeterinariaController {
 	private IVeterinariaService vService;
 	private Veterinaria veterinaria;
 	List<Veterinaria> listaVeterinarias;
-	
+
 	// constructores
 
 	@PostConstruct
@@ -66,18 +66,20 @@ public class VeterinariaController {
 
 	public void findByName() {
 		try {
-			if(veterinaria.getNombreVeterinaria().isEmpty()) {
+			if (veterinaria.getNombreVeterinaria().isEmpty()) {
 				this.list();
-			}else {
-				listaVeterinarias=this.vService.findByName(this.getVeterinaria());
+			} else {
+				listaVeterinarias = this.vService.findByName(this.getVeterinaria());
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
 	
-	
-	
+	public void clean() {
+		this.init();
+	}
+
 	public Veterinaria getVeterinaria() {
 		return veterinaria;
 	}
