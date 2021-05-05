@@ -64,6 +64,20 @@ public class VeterinariaController {
 		}
 	}
 
+	public void findByName() {
+		try {
+			if(veterinaria.getNombreVeterinaria().isEmpty()) {
+				this.list();
+			}else {
+				listaVeterinarias=this.vService.findByName(this.getVeterinaria());
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
+	
 	public Veterinaria getVeterinaria() {
 		return veterinaria;
 	}

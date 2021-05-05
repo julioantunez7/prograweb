@@ -31,7 +31,7 @@ public class VeterinariaDaoImpl implements IVeterinariaDao{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Veterinaria> list(){
-		List<Veterinaria> lista=new ArrayList<Veterinaria>();
+		List<Veterinaria> lista = new ArrayList<Veterinaria>();
 		try {
 			Query q = em.createQuery("from Veterinaria v");
 			lista=(List<Veterinaria>)q.getResultList();
@@ -55,6 +55,23 @@ public class VeterinariaDaoImpl implements IVeterinariaDao{
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+	}
+
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Veterinaria> findByName(Veterinaria vet) {
+		List<Veterinaria> lista = new ArrayList<Veterinaria>();
+		try {
+			Query q = em.createQuery("from Veterinaria v where v.nombreVeterinaria like ?1");
+			q.setParameter(1, "%" + vet.getNombreVeterinaria() + "%");
+			lista=(List<Veterinaria>)q.getResultList();
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return lista;
 	}
 	
 }

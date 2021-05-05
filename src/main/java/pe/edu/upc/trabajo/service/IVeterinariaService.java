@@ -10,4 +10,6 @@ public interface IVeterinariaService {
 	List<Veterinaria>list();
 	
 	public void delete(int idVeterinaria);
+	
+	public List<Veterinaria> findByName(Veterinaria vet);
 }

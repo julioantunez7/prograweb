@@ -30,4 +30,10 @@ public class VeterinariaServiceImpl implements IVeterinariaService{
 	public void delete(int idVeterinaria) {
 		vDao.delete(idVeterinaria);
 	}
+
+	@Override
+	public List<Veterinaria> findByName(Veterinaria vet) {
+		// TODO Auto-generated method stub
+		return vDao.findByName(vet);
+	}
 }
