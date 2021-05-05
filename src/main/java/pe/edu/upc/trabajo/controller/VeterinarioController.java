@@ -28,6 +28,8 @@ public class VeterinarioController {
 	List<Veterinario> listaveterinarios;
 	List<Veterinaria> listaveterinarias;
 
+	// métodos específicos
+	@PostConstruct
 	public void init() {
 		this.veterinario = new Veterinario();
 		this.listaveterinarios = new ArrayList<Veterinario>();
@@ -36,8 +38,6 @@ public class VeterinarioController {
 		this.listVeterinaria();
 	}
 
-	// métodos específicos
-	@PostConstruct
 	public String newVeterinario() {
 		this.setVeterinario(new Veterinario());
 		return "veterinario.xhtml";
