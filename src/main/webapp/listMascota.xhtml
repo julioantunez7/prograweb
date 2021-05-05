@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="master.xhtml">
+
+
+	<ui:define name="title">
+        .:Mascotas:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Listado de mascotas </span>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group">
+						<p:commandButton value="Nuevo"
+							action="#{mascotaController.newMascota()}"
+							styleClass="btn btn-primary" ajax="false" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="lstMascota" var="p"
+							value="#{mascotaController.listaMascotas}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{m.idMascota}">
+								<h:outputText value="#{m.idMascota}" />
+							</p:column>
+
+							<p:column headerText="Nombre" sortBy="#{m.nombre}">
+								<h:outputText value="#{m.nombre}" />
+							</p:column>
+							<p:column headerText="Edad" sortBy="#{m.edad}">
+								<h:outputText value="#{m.edad}" />
+							</p:column>
+							<p:column headerText="Raza" sortBy="#{m.raza}">
+								<h:outputText value="#{m.raza}" />
+							</p:column>
+							<p:column headerText="Clientes" sortBy="#{p.cliente.nombre}">
+								<h:outputText value="#{p.cliente.nombre}" />
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="lstMascota" value="Eliminar"
+									actionListener="#{mascotaController.delete(m)}"></h:commandLink>
+							</p:column>
+
+
+						</p:dataTable>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

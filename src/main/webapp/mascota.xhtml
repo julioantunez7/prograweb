@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Mascotas:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>.:Registro de Mascotas:.</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idMascota" value="Id " styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idMascota"
+				styleClass="form-control"
+				value="#{mascotaController.mascota.idMascota}" />
+				
+			<h:outputLabel for="nombre" value="Mascota "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nombre" styleClass="form-control"
+				value="#{mascotaController.mascota.nombre}" maxlength="30"
+				required="true" />
+
+			<h:outputLabel for="edad" value="Edad"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="edad" styleClass="form-control"
+				value="#{mascotaController.mascota.edad}" maxlength="30"
+				required="true" />
+
+			<h:outputLabel for="raza" value="Raza "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="raza" styleClass="form-control"
+				value="#{mascotaController.mascota.raza}" maxlength="30"
+				required="true" />
+				
+			<p:outputLabel for="cboCliente" value="Cliente" />
+			<p:selectOneMenu id="cboCliente"
+				value="#{mascotaController.mascota.cliente}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{mascotaController.listaClientes}" var="c"
+					itemLabel="#{c.nombre}" itemValue="#{c}" />
+			</p:selectOneMenu>
+			<br />
+
+			<p:commandButton value="Grabar"
+				actionListener="#{mascotaController.Insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listMascota?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listMascota?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
