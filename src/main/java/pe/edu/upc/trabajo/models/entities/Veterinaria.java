@@ -57,6 +57,29 @@ public class Veterinaria {
 	public void setDescripcionVeterinaria(String descripcionVeterinaria) {
 		this.descripcionVeterinaria = descripcionVeterinaria;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idVeterinaria == null) ? 0 : idVeterinaria.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Veterinaria other = (Veterinaria) obj;
+		if (idVeterinaria == null) {
+			if (other.idVeterinaria != null)
+				return false;
+		} else if (!idVeterinaria.equals(other.idVeterinaria))
+			return false;
+		return true;
+	}
 	
 	
 	//@OneToMany(mappedBy = "veterinaria", fetch = FetchType.LAZY)

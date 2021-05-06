@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Veterinarios:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>.:Registro de Veterinarios:.</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idVeterinario" value="Id " styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idVeterinario"
+				styleClass="form-control"
+				value="#{veterinarioController.veterinario.id}" />
+				
+			<h:outputLabel for="nombre" value="Nombre del veterinario "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nombre" styleClass="form-control"
+				value="#{veterinarioController.veterinario.nombre}" maxlength="30"
+				required="true" />
+
+			<h:outputLabel for="número" value="Número"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="numero" styleClass="form-control"
+				value="#{veterinarioController.veterinario.numero}" maxlength="30"
+				required="true" />
+
+				
+			<p:outputLabel for="cboVeterinaria" value="Veterinaria" />
+			<p:selectOneMenu id="cboVeterinaria"
+				value="#{veterinarioController.veterinario.veterinaria}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{veterinarioController.listaveterinarias}" var="v"
+					itemLabel="#{v.nombreVeterinaria}" itemValue="#{v}" />
+			</p:selectOneMenu>
+			<br />
+
+			<p:commandButton value="Grabar"
+				actionListener="#{veterinarioController.Insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listVeterinario?faces-redirect=true" />
+				
+			<p:commandButton value="Cancelar"
+				action="listVeterinario?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+				
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

@@ -28,6 +28,14 @@ public class VeterinarioController {
 	List<Veterinario> listaveterinarios;
 	List<Veterinaria> listaveterinarias;
 
+	public List<Veterinaria> getListaveterinarias() {
+		return listaveterinarias;
+	}
+
+	public void setListaveterinarias(List<Veterinaria> listaveterinarias) {
+		this.listaveterinarias = listaveterinarias;
+	}
+
 	// métodos específicos
 	@PostConstruct
 	public void init() {
