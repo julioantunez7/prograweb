@@ -51,6 +51,8 @@ public class Producto {
 	public void setdescripcionProducto(String descripcionProducto) {
 		this.descripcionProducto = descripcionProducto;
 	}
+
+	
 	
 	
 	

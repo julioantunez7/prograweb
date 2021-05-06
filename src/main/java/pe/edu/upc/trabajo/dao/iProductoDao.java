@@ -12,5 +12,5 @@ public void insert (Producto pro);
 	
 	public void delete(int idProducto);
 	
-
+	public List<Producto> findByName(Producto reg);
 }

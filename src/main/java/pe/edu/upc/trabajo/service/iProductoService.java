@@ -12,7 +12,7 @@ public interface iProductoService {
 
 	public void delete(int idProducto);
 	
-	
+	public List<Producto> findByName(Producto reg);
 	
 
 }

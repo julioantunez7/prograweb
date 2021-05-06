@@ -23,7 +23,13 @@ public class ProductoServiceImpl implements iProductoService {
 	@Override
 	public void insert(Producto pro) {
 		
-		pDao.insert(pro);
+		
+		try {
+			pDao.insert(pro);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
 						
 	}
 
@@ -43,7 +49,10 @@ public class ProductoServiceImpl implements iProductoService {
 		
 	}
 	
-	
+	@Override
+	public List<Producto> findByName(Producto reg){
+		return pDao.findByName(reg);
+	}
 	
 	
 
