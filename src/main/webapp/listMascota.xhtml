@@ -31,28 +31,28 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
-						<p:dataTable id="lstMascota" var="p"
+						<p:dataTable id="lstMascota" var="m"
 							value="#{mascotaController.listaMascotas}" paginator="true"
 							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
 							rows="10" styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{m.idMascota}">
+							<p:column headerText="Id">
 								<h:outputText value="#{m.idMascota}" />
 							</p:column>
 
-							<p:column headerText="Nombre" sortBy="#{m.nombre}">
+							<p:column headerText="Nombre">
 								<h:outputText value="#{m.nombre}" />
 							</p:column>
-							<p:column headerText="Edad" sortBy="#{m.edad}">
+							<p:column headerText="Edad">
 								<h:outputText value="#{m.edad}" />
 							</p:column>
-							<p:column headerText="Raza" sortBy="#{m.raza}">
+							<p:column headerText="Raza">
 								<h:outputText value="#{m.raza}" />
 							</p:column>
-							<p:column headerText="Clientes" sortBy="#{p.cliente.nombre}">
-								<h:outputText value="#{p.cliente.nombre}" />
+							<p:column headerText="Clientes">
+								<h:outputText value="#{m.cliente.nombre}" />
 							</p:column>
 							<p:column headerText="Operación" exportable="false">
 								<h:commandLink action="lstMascota" value="Eliminar"

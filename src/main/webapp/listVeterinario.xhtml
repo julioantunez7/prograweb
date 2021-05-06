@@ -31,27 +31,27 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
-						<p:dataTable id="lstVeterinario" var="p"
+						<p:dataTable id="lstVeterinario" var="v"
 							value="#{veterinarioController.listaveterinarios}" paginator="true"
 							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
 							rows="10" styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{v.id}">
+							<p:column headerText="Id">
 								<h:outputText value="#{v.id}" />
 							</p:column>
 
-							<p:column headerText="Nombre" sortBy="#{v.nombre}">
+							<p:column headerText="Nombre">
 								<h:outputText value="#{v.nombre}" />
 							</p:column>
 							
-							<p:column headerText="Numero" sortBy="#{v.numero}">
+							<p:column headerText="Numero">
 								<h:outputText value="#{v.numero}" />
 							</p:column>
 							
-							<p:column headerText="Veterinarias" sortBy="#{v.Veterinaria.nombre}">
-								<h:outputText value="#{v.veterinaria.nombre}" />
+							<p:column headerText="Veterinarias">
+								<h:outputText value="#{v.veterinaria.nombreVeterinaria}" />
 							</p:column>
 							
 							<p:column headerText="Operación" exportable="false">
